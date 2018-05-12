@@ -16,7 +16,14 @@ class BSKNode: SKNode {
     private weak var targetNode: SKSpriteNode?
     private(set) var running = false
     private var timeSinceLastBulletShoot: CFTimeInterval = 0
-    private var gateOpen = false
+    private var gateOpen = false {
+        didSet {
+            if !gateOpen {
+                runLoopCounter = 0
+            }
+        }
+    }
+    private var runLoopCounter = 0
     var configuration: BSKConfiguration!
     
     init(with configuration: BSKConfiguration) {
@@ -58,6 +65,9 @@ class BSKNode: SKNode {
     }
     
     private func scheduleFire(scene: SKScene) {
+        if self.configuration.fireInterval <= 0 {
+            return
+        }
         let shootWait = SKAction.wait(forDuration: self.configuration.fireInterval)
         let shootBlock = SKAction.run({[unowned self] in
             self.runloop(scene: scene)
@@ -71,6 +81,7 @@ class BSKNode: SKNode {
         guard let parentNode = parentNode else {return}
         guard let targetNode = targetNode else {return}
         
+        print("Run loop counter: \(runLoopCounter)")
         let vectors = BSKBulletTrackConverter.getVectors(
             distance: configuration.travelDistance,
             currentPosition: parentNode.position,
@@ -81,12 +92,12 @@ class BSKNode: SKNode {
         )
         var bulletNodeList: [SKSpriteNode] = []
         for _ in 0..<configuration.numberOfGunBarrel {
-            bulletNodeList.append(SKSpriteNode(texture: configuration.textureNode.texture))
+            bulletNodeList.append(configuration.textureNode.copy() as! SKSpriteNode)
         }
 
         for (index, bulletNode) in bulletNodeList.enumerated() {
             bulletNode.position = parentNode.position
-            let action = SKAction.move(by: vectors[index], duration: self.configuration.travelDuration)
+            let action = SKAction.move(by: vectors[index] * (CGFloat(runLoopCounter) * (configuration.vectorAcceleration) + 1), duration: self.configuration.travelDuration)
             bulletNode.run(action, completion: {
                 bulletNode.removeFromParent()
             })
@@ -101,10 +112,12 @@ class BSKNode: SKNode {
             scene.addChild(bulletNode)
             
         }
+        runLoopCounter += 1
     }
     
     func stop(){
         running = false
+        gateOpen = false
         parentNode!.removeAllActions()
     }
 }

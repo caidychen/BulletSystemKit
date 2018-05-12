@@ -39,17 +39,16 @@ class BSKBulletTrackConverter {
                 let currentVector = CGVector(angle: startAngle.degreesToRadians() + CGFloat(i)*angleInterval.degreesToRadians())
                 vectors.append(currentVector)
                 continue
-            default:
-                break
+            
             }
         }
-        return vectors.map({ (vector) -> CGVector in
+        return vectors.enumerated().map({ (index, vector) -> CGVector in
             var vector = vector
             let variant = 1 - accuracy
             let variantVector = variant == 0 ?
                 vector.normalize() :
                 vector.normalize() + CGVector(dx: (CGFloat(arc4random_uniform(10)) - 5)*variant / 10, dy: (CGFloat(arc4random_uniform(10)) - 5)*variant / 10)
-            return variantVector * distance
+            return variantVector * (distance)
         })
     }
     

@@ -137,7 +137,7 @@
                                                 <rect key="frame" x="0.0" y="101.5" width="768" height="98.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAy-rj-mgs">
-                                                        <rect key="frame" x="0.0" y="0.0" width="190" height="98.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="151" height="98.5"/>
                                                         <color key="backgroundColor" red="0.17717212260000001" green="0.17717212260000001" blue="0.17717212260000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <state key="normal" title="Duration: 0.0">
@@ -148,7 +148,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z65-5m-3ot">
-                                                        <rect key="frame" x="193" y="0.0" width="189.5" height="98.5"/>
+                                                        <rect key="frame" x="154" y="0.0" width="151.5" height="98.5"/>
                                                         <color key="backgroundColor" red="0.17717212260000001" green="0.17717212260000001" blue="0.17717212260000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <state key="normal" title="Delay: 0.0">
@@ -159,7 +159,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ln3-xo-6eh">
-                                                        <rect key="frame" x="385.5" y="0.0" width="190" height="98.5"/>
+                                                        <rect key="frame" x="308.5" y="0.0" width="151" height="98.5"/>
                                                         <color key="backgroundColor" red="0.17717212260000001" green="0.17717212260000001" blue="0.17717212260000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <state key="normal" title="Uptime: 0.0">
@@ -170,7 +170,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4B-uj-tUh">
-                                                        <rect key="frame" x="578.5" y="0.0" width="189.5" height="98.5"/>
+                                                        <rect key="frame" x="462.5" y="0.0" width="151.5" height="98.5"/>
                                                         <color key="backgroundColor" red="0.17717212260000001" green="0.17717212260000001" blue="0.17717212260000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <state key="normal" title="Downtime: 0.0">
@@ -178,6 +178,17 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="optionButtonTappedWithSender:" destination="BV1-FR-VrT" eventType="touchUpInside" id="d7x-4o-gtC"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kc-SH-9dp">
+                                                        <rect key="frame" x="617" y="0.0" width="151" height="98.5"/>
+                                                        <color key="backgroundColor" red="0.17717212260000001" green="0.17717212260000001" blue="0.17717212260000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <state key="normal" title="Acc: 0.0">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="optionButtonTappedWithSender:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Ai1-a2-52I"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -214,6 +225,7 @@
                     </view>
                     <connections>
                         <outlet property="IntervalButton" destination="LYU-wa-5nz" id="ruj-vB-b3s"/>
+                        <outlet property="accelerateButton" destination="1Kc-SH-9dp" id="JDU-VY-DMP"/>
                         <outlet property="accuracyButton" destination="1Aa-Yp-N2b" id="3n9-y9-3gh"/>
                         <outlet property="delayButton" destination="Z65-5m-3ot" id="iGs-si-n5j"/>
                         <outlet property="doneButton" destination="b1V-vX-UCU" id="MWH-zR-NhC"/>

@@ -22,6 +22,8 @@ class BSKConfiguration {
     
     var bulletPattern: BSKPattern = .SingleDirectional
     
+    var vectorAcceleration: CGFloat = 0.0
+    
     var travelDistance: CGFloat = 0.0
     
     var travelDuration: CFTimeInterval = 0.0

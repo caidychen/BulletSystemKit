@@ -19,6 +19,7 @@ enum ConfigOption: Int {
     case Delay      = 5
     case Uptime     = 6
     case Downtime   = 7
+    case Accelerate = 8
 }
 
 class GameViewController: UIViewController {
@@ -44,6 +45,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var delayButton: UIButton!
     @IBOutlet weak var uptimeButton: UIButton!
     @IBOutlet weak var downtimeButton: UIButton!
+    @IBOutlet weak var accelerateButton: UIButton!
     
     @IBOutlet weak var doneButton: UIButton!
     
@@ -74,7 +76,7 @@ class GameViewController: UIViewController {
     private var delay: CFTimeInterval = 0.1
     private var uptime: CFTimeInterval = 0.5
     private var downtime: CFTimeInterval = 0.5
-    
+    private var accelerate: CGFloat = 0.0
     private var selectedOption: ConfigOption = ConfigOption(rawValue: 0)!
     
     let scene = GameScene(size: UIScreen.main.bounds.size)
@@ -157,6 +159,12 @@ class GameViewController: UIViewController {
             slider.value = Float(downtime)
             sliderTItleLabel.text = "Down Time"
             break
+        case .Accelerate:
+            slider.minimumValue = 0
+            slider.maximumValue = 1
+            slider.value = Float(accelerate)
+            sliderTItleLabel.text = "Vector Acceleration"
+            break
         default:
             break
         }
@@ -182,6 +190,8 @@ class GameViewController: UIViewController {
             uptime = CFTimeInterval(newValue)
         case .Downtime:
             downtime = CFTimeInterval(newValue)
+        case .Accelerate:
+            accelerate = CGFloat(newValue)
         default:
             break
         }
@@ -201,6 +211,7 @@ class GameViewController: UIViewController {
         scene.bskConfig.travelDuration = duration
         scene.bskConfig.visbileDelay = delay
         scene.bskConfig.bulletPattern = patternValue
+        scene.bskConfig.vectorAcceleration = accelerate
         scene.bskConfig.gateControl = BSKGateControl(uptime: uptime, downtime: downtime)
         
     }
@@ -213,6 +224,7 @@ class GameViewController: UIViewController {
         delayButton.setTitle("Delay: \(String(format: "%.2f", delay))", for: .normal)
         uptimeButton.setTitle("Uptime: \(String(format: "%.2f", uptime))", for: .normal)
         downtimeButton.setTitle("Downtime: \(String(format: "%.2f", downtime))", for: .normal)
+        accelerateButton.setTitle("Acc: \(String(format: "%.2f", accelerate))", for: .normal)
         patternButton.setTitle(patternText, for: .normal)
     }
     
