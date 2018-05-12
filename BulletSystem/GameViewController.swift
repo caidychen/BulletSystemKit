@@ -93,6 +93,9 @@ class GameViewController: UIViewController {
         patternIndex = 0
         updateButtonTitle()
     }
+    @IBAction func removeAllBulletsTapped(_ sender: UIButton) {
+        scene.clearAllBullets()
+    }
     
     @IBAction func optionButtonTapped(sender: UIButton){
         if sender.tag == ConfigOption.Pattern.rawValue {

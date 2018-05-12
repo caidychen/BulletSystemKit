@@ -19,6 +19,7 @@
 		C642C52920A3176900868520 /* BSKGateControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642C52820A3176900868520 /* BSKGateControl.swift */; };
 		C642C52B20A317F600868520 /* BSKPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642C52A20A317F600868520 /* BSKPattern.swift */; };
 		C642C52D20A319AF00868520 /* BSKBulletTrackConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C642C52C20A319AF00868520 /* BSKBulletTrackConverter.swift */; };
+		C65023D020A68F4400756A07 /* blueDiamond.png in Resources */ = {isa = PBXBuildFile; fileRef = C65023CF20A68F4100756A07 /* blueDiamond.png */; };
 		C6591A4020A456820043EEB0 /* blueBullet.png in Resources */ = {isa = PBXBuildFile; fileRef = C6591A3F20A456700043EEB0 /* blueBullet.png */; };
 		C675A5A820A3256700C6011B /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C675A59C20A3255600C6011B /* CGFloat+Extensions.swift */; };
 		C675A5A920A3256700C6011B /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C675A59D20A3255600C6011B /* CGPoint+Extensions.swift */; };
@@ -51,6 +52,7 @@
 		C642C52820A3176900868520 /* BSKGateControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSKGateControl.swift; sourceTree = "<group>"; };
 		C642C52A20A317F600868520 /* BSKPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSKPattern.swift; sourceTree = "<group>"; };
 		C642C52C20A319AF00868520 /* BSKBulletTrackConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSKBulletTrackConverter.swift; sourceTree = "<group>"; };
+		C65023CF20A68F4100756A07 /* blueDiamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueDiamond.png; sourceTree = "<group>"; };
 		C6591A3F20A456700043EEB0 /* blueBullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueBullet.png; sourceTree = "<group>"; };
 		C675A59C20A3255600C6011B /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		C675A59D20A3255600C6011B /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				C6591A4120A458B50043EEB0 /* BSK */,
 				C675A5B420A328F100C6011B /* Spaceship.jpg */,
 				C675A5B620A334FC00C6011B /* bullet.png */,
+				C65023CF20A68F4100756A07 /* blueDiamond.png */,
 				C6591A3F20A456700043EEB0 /* blueBullet.png */,
 				C642C51420A2F90800868520 /* Main.storyboard */,
 				C642C51720A2F90800868520 /* Assets.xcassets */,
@@ -209,6 +212,7 @@
 				C6591A4020A456820043EEB0 /* blueBullet.png in Resources */,
 				C642C51620A2F90800868520 /* Main.storyboard in Resources */,
 				C675A5B720A334FF00C6011B /* bullet.png in Resources */,
+				C65023D020A68F4400756A07 /* blueDiamond.png in Resources */,
 				C642C51820A2F90800868520 /* Assets.xcassets in Resources */,
 				C642C51B20A2F90800868520 /* LaunchScreen.storyboard in Resources */,
 			);

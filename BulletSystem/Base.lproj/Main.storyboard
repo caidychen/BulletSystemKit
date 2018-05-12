@@ -19,6 +19,19 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ssi-bt-WIz" customClass="SKView">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="824"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgz-EF-Md5">
+                                        <rect key="frame" x="624" y="18" width="136" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.1639287243150685" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Clear All Bullets">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="removeAllBulletsTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="exP-S7-z1r"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lsl-zv-nM4">
@@ -244,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.18749999999999" y="117.1875"/>
+            <point key="canvasLocation" x="116.40625" y="117.18749999999999"/>
         </scene>
     </scenes>
 </document>

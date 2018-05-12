@@ -24,6 +24,8 @@ class BSKNode: SKNode {
         }
     }
     private var runLoopCounter = 0
+    var categoryBitMask: UInt32 = 0
+    var contactTestBitMask: UInt32 = 0
     var configuration: BSKConfiguration!
     
     init(with configuration: BSKConfiguration) {
@@ -81,7 +83,6 @@ class BSKNode: SKNode {
         guard let parentNode = parentNode else {return}
         guard let targetNode = targetNode else {return}
         
-        print("Run loop counter: \(runLoopCounter)")
         let vectors = BSKBulletTrackConverter.getVectors(
             distance: configuration.travelDistance,
             currentPosition: parentNode.position,
@@ -90,12 +91,15 @@ class BSKNode: SKNode {
             numberOfBullet: configuration.numberOfGunBarrel,
             accuracy: configuration.fireAccuracy
         )
-        var bulletNodeList: [SKSpriteNode] = []
+        
+        var bullietList: [SKSpriteNode] = []
         for _ in 0..<configuration.numberOfGunBarrel {
-            bulletNodeList.append(configuration.textureNode.copy() as! SKSpriteNode)
+            bullietList.append(configuration.textureNode.copy() as! SKSpriteNode)
         }
 
-        for (index, bulletNode) in bulletNodeList.enumerated() {
+        
+        for (index, bulletNode) in bullietList.enumerated() {
+            
             bulletNode.position = parentNode.position
             let action = SKAction.move(by: vectors[index] * (CGFloat(runLoopCounter) * (configuration.vectorAcceleration) + 1), duration: self.configuration.travelDuration)
             bulletNode.run(action, completion: {
@@ -109,8 +113,13 @@ class BSKNode: SKNode {
             let visibleSequence = SKAction.sequence([visibleWait,visibleBlock])
             bulletNode.run(visibleSequence)
             bulletNode.zPosition = zPosition
+            bulletNode.zRotation = vectors[index].angle + CGFloat(Float.pi / 2)
+            bulletNode.name = name
+            bulletNode.physicsBody = SKPhysicsBody(rectangleOf: bulletNode.texture!.size())
+            bulletNode.physicsBody?.categoryBitMask = categoryBitMask
+            bulletNode.physicsBody?.contactTestBitMask = contactTestBitMask
+            bulletNode.physicsBody?.collisionBitMask = 0
             scene.addChild(bulletNode)
-            
         }
         runLoopCounter += 1
     }
