@@ -57,25 +57,19 @@ class BSKNode: SKNode {
             self.gateOpen = true
             return
         }
-        let uptime = SKAction.wait(forDuration: self.configuration.gateControl.uptime)
-        let downtime = SKAction.wait(forDuration: self.configuration.gateControl.downtime)
-        let gateControlBlock = SKAction.run({[unowned self] in
+        parentNode!.run(configuration.gateControl.action {
             self.gateOpen = !self.gateOpen
         })
-        let gateSequence = SKAction.sequence([gateControlBlock, uptime, gateControlBlock, downtime])
-        parentNode!.run(SKAction.repeatForever(gateSequence))
     }
     
     private func scheduleFire(scene: SKScene) {
         if self.configuration.fireInterval <= 0 {
             return
         }
-        let shootWait = SKAction.wait(forDuration: self.configuration.fireInterval)
-        let shootBlock = SKAction.run({[unowned self] in
+        
+        parentNode!.run(BSKFireInterval.action(interval: configuration.fireInterval){
             self.runloop(scene: scene)
         })
-        let shootSequence = SKAction.sequence([shootWait,shootBlock])
-        parentNode!.run(SKAction.repeatForever(shootSequence))
     }
     
     private func runloop(scene: SKScene) {

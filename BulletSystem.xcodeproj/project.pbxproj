@@ -35,6 +35,7 @@
 		C675A5B320A3256700C6011B /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = C675A5A720A3255600C6011B /* Vector3.swift */; };
 		C675A5B520A328F300C6011B /* Spaceship.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C675A5B420A328F100C6011B /* Spaceship.jpg */; };
 		C675A5B720A334FF00C6011B /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = C675A5B620A334FC00C6011B /* bullet.png */; };
+		C6DE7C7B20A694ED008FEB1B /* BSKFireInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DE7C7A20A694ED008FEB1B /* BSKFireInterval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		C675A5A720A3255600C6011B /* Vector3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		C675A5B420A328F100C6011B /* Spaceship.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaceship.jpg; sourceTree = "<group>"; };
 		C675A5B620A334FC00C6011B /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
+		C6DE7C7A20A694ED008FEB1B /* BSKFireInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSKFireInterval.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				C642C52420A30A7700868520 /* BSKNode.swift */,
 				C642C52620A3161D00868520 /* BSKConfiguration.swift */,
 				C642C52820A3176900868520 /* BSKGateControl.swift */,
+				C6DE7C7A20A694ED008FEB1B /* BSKFireInterval.swift */,
 				C642C52A20A317F600868520 /* BSKPattern.swift */,
 				C642C52C20A319AF00868520 /* BSKBulletTrackConverter.swift */,
 			);
@@ -228,6 +231,7 @@
 				C642C51120A2F90800868520 /* GameScene.swift in Sources */,
 				C642C52B20A317F600868520 /* BSKPattern.swift in Sources */,
 				C642C52D20A319AF00868520 /* BSKBulletTrackConverter.swift in Sources */,
+				C6DE7C7B20A694ED008FEB1B /* BSKFireInterval.swift in Sources */,
 				C675A5B120A3256700C6011B /* SKTEffects.swift in Sources */,
 				C675A5B020A3256700C6011B /* SKTAudio.swift in Sources */,
 				C642C52320A2F97A00868520 /* BaseGameScene.swift in Sources */,
